@@ -28,10 +28,11 @@ html,body{ position:relative;width:100%;height:100%;margin:0;padding:0; }
 .list,.content{ width:680px;padding:0 0 0 340px; }
 .list>ul,.content>div{ position:relative;padding:0 0 0 60px;margin:0; }
 .list>ul>li{ position:relative;margin-bottom:60px; }
+.list>ul>li>a>div{ position:relative; }
 
 .title{ margin:0 0 14px 0;text-decoration:none;color:#808284;font-size:28px;font-weight:bold; }
 .date,.contentinner>p,.paragraph{ width:auto;color:#a7a9ab;font-size:16px; }
-.list .date{ position:absolute;left:0;top:50px; }
+.list .date{ position:absolute;left:0;top:0;line-height:24px; }
 .content .date{ padding-left:60px; }
 .contentinner>p,.paragraph{ line-height:24px; }
 .list .paragraph{ padding-left:120px; }
