@@ -4,7 +4,7 @@ html,body{ position:relative;width:100%;height:100%;margin:0;padding:0; }
 .action{ position:fixed;left:0;top:0;width:340px;height:100%;background:#0d868d; }
 .logo{ position:absolute;left:50%;top:50%;width:160px;height:160px;margin:-80px;background:url(logo.svg) center center no-repeat;background-size:160px; }
 
-.overline{ text-decoration:line-through !important; }
+.overline{ text-decoration:line-through !important;color:#a7a9ab !important; }
 
 .topbar{ padding:60px 60px 60px 25%; }
 .topbar>div{ padding-left:60px; }
