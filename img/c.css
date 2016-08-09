@@ -28,12 +28,12 @@ html,body{ position:relative;width:100%;height:100%;margin:0;padding:0; }
 .list>ul>li{ position:relative;margin-bottom:60px; }
 
 .title{ margin:0 0 14px 0;color:#808284;font-size:28px;font-weight:bold; }
-.date,.paragraph{ width:auto;color:#a7a9ab;font-size:16px; }
+.date,.contentinner>p{ width:auto;color:#a7a9ab;font-size:16px; }
 .list .date{ position:absolute;left:0;top:50px; }
 .content .date{ padding-left:60px; }
-.paragraph{ line-height:24px; }
-.list .paragraph{ padding-left:120px; }
-.content .paragraph{ padding-left:60px; }
+.contentinner>p{ line-height:24px; }
+.list .contentinner>p{ padding-left:120px; }
+.content .contentinner>p{ padding-left:60px; }
 
 .contentinner b{ padding:4px 6px;border-radius:4px;color:#fff;background:#f15e4a; }
 .contentinner pre{ width:auto;margin:0;padding:10px 15px;margin-left:60px;border:1px solid #939597;border-radius:5px;color:#6d6e70;background:#e6e7e8; }
