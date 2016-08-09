@@ -1,4 +1,4 @@
-*{ font-family:sans-serif;list-style:none; }
+*{ font-family:"Segoe UI",Segoe,Tahoma,Arial,Verdana,sans-serif;list-style:none;text-decoration:none; }
 html,body{ position:relative;width:100%;height:100%;margin:0;padding:0; }
 
 .action{ position:fixed;left:0;top:0;width:25%;height:100%;background:#0d868d; }
