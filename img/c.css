@@ -6,7 +6,7 @@ html,body{ position:relative;width:100%;height:100%;margin:0;padding:0; }
 
 .overline{ text-decoration:line-through !important;color:#a7a9ab !important; }
 
-.topbar{ padding:60px 60px 60px 25%; }
+.topbar{ padding:60px 60px 60px 340px; }
 .topbar>div{ padding-left:60px; }
 .name{ position:relative;width:434px;height:40px;margin-bottom:20px;background:url(name.svg) left top no-repeat; }
 .description{ overflow:hidden; }
