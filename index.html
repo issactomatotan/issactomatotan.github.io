@@ -11,7 +11,7 @@ layout: default
       <h3 class="title">{{ post.title }}</h3>
       <div>
         <span class="date">{{ post.date | date_to_string }}</span>
-        <p class="paragraph">test</p>
+        <p class="paragraph">{{ post.excerpt | remove: '<p>' | remove: '</p>' }}</p>
       </div>
       </a>
     </li>
