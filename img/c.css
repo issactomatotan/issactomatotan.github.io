@@ -73,7 +73,7 @@ html,body{ position:relative;width:100%;height:100%;margin:0;padding:0; }
   
   .topbar{ padding:60px 10px; }
   .topbar>div{ width:100%; }
-  .name{ background-size:100%; }
+  .name{ width:100%;background-size:100%; }
   
 }
 
