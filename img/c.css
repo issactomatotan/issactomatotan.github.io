@@ -72,11 +72,11 @@ body{ overflow-x:hidden; }
 
 @media screen and (max-width: 512px){
   
-  .topbar{ padding:10px 10px 60px; }
+  .topbar{ padding:60px 10px; }
   .topbar>div{ width:100%; }
   .name{ width:100%;margin-bottom:5px;background-size:100%; }
   .nav{ bottom:-60px;right:auto;left:-20px; }
-  .list,.content{ padding:60px 10px; }
+  .list,.content{ padding:10px 10px 60px; }
   
 }
 
