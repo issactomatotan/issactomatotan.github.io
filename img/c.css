@@ -61,7 +61,7 @@ html,body{ position:relative;width:100%;height:100%;margin:0;padding:0;overflow-
   .description>a,.description>h2{ float:none; }
   .description>a{ position:absolute;top:-50px; }
   .description>a>span{ margin-left:0; }
-  .list,.content{ width:100%;max-width:434px; }
+  .list,.content{ width:auto;max-width:434px; }
   .list>ul,.content>div{ padding:0; }
   .content .date,.contentinner>p{ padding-left:0; }
   .contentinner pre{ margin-left:0; }
@@ -72,7 +72,7 @@ html,body{ position:relative;width:100%;height:100%;margin:0;padding:0;overflow-
 @media screen and (max-width: 512px){
   
   .topbar{ padding:60px 10px; }
-  .topbar>div{ width:100%; }
+  .topbar>div{ width:auto; }
   .name{ width:100%;margin-bottom:5px;background-size:100%; }
   .nav{ bottom:-60px;right:auto;left:-20px; }
   .list,.content{ padding:10px 10px 60px; }
