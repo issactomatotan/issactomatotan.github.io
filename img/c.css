@@ -55,7 +55,11 @@ html,body{ position:relative;width:100%;height:100%;margin:0;padding:0; }
 @media screen and (max-width: 800px){
   
   .topbar{ width:auto;padding:60px 30px; }
-  .topbar>div{ width:434px;margin:0 auto; }
+  .topbar>div{ position:relative;width:434px;margin:0 auto; }
+  .language{ float:none;position:absolute;right:0;top:-40px; }
+  .description>a,.description>h2{ float:none; }
+  .description>a{ position:absolute;top:-40px; }
+  .description>a>span{ margin-left:0; }
   
 }
 
