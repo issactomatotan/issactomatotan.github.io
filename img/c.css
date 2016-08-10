@@ -48,7 +48,7 @@ html,body{ position:relative;width:100%;height:100%;margin:0;padding:0; }
   .action{ position:relative;width:100%;height:250px; }
   .topbar{ width:680px;padding:60px 0;margin:0 auto; }
   .topbar>div{ padding:0; }
-  .list,.content{ padding:0;margin:0 auto; }
+  .list,.content{ padding:0 0 60px 0;margin:0 auto; }
   
 }
 
@@ -61,7 +61,10 @@ html,body{ position:relative;width:100%;height:100%;margin:0;padding:0; }
   .description>a,.description>h2{ float:none; }
   .description>a{ position:absolute;top:-50px; }
   .description>a>span{ margin-left:0; }
-  
+  .list,.content{ max-width:434px; }
+  .list>div,.content>div{ padding:0; }
+  .content .date,.contentinner>p{ padding-left:0; }
+  .contentinner pre{ margin-left:0; }
 }
 
 
