@@ -62,7 +62,7 @@ html,body{ position:relative;width:100%;height:100%;margin:0;padding:0; }
   .description>a{ position:absolute;top:-50px; }
   .description>a>span{ margin-left:0; }
   .list,.content{ max-width:434px; }
-  .list>div,.content>div{ padding:0; }
+  .list>ul,.content>div{ padding:0; }
   .content .date,.contentinner>p{ padding-left:0; }
   .contentinner pre{ margin-left:0; }
 }
