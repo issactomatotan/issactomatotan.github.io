@@ -75,7 +75,7 @@ html,body{ position:relative;width:100%;height:100%;margin:0;padding:0;overflow-
   .topbar>div{ width:auto; }
   .name{ width:100%;margin-bottom:5px;background-size:100%; }
   .nav{ bottom:-60px;right:auto;left:-20px; }
-  .list,.content{ padding:10px 10px 60px; }
+  .list,.content{ padding:30px 10px 60px; }
   
 }
 
