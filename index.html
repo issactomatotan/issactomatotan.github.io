@@ -4,18 +4,6 @@ layout: default
 
 {% include header.html %}
 
-  <div class="list"><ul>
-    {% for post in site.posts %}
-    <li>
-      <a href="{{ post.url }}">
-      <h3 class="title">{{ post.title }}</h3>
-      <div>
-        <span class="date">{{ post.date | date_to_string }}</span>
-        <p class="paragraph">{{ post.excerpt | remove: '<p>' | remove: '</p>' }}</p>
-      </div>
-      </a>
-    </li>
-    {% endfor %}
-  </ul></div>
+  
 
 {% include footer.html %}
