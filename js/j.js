@@ -10,7 +10,7 @@
   
   function check(){
     if(!window.XMLHttpRequest) return;
-    xhr= window.XMLHttpRequest;
+    xhr= new XMLHttpRequest();
     
     xhr.onreadystatechange= state;
     xhr.open('GET','/act.html',true);
