@@ -65,7 +65,8 @@ html,body{ position:relative;width:100%;height:100%;margin:0;padding:0;overflow-
   .list>ul,.content>div{ padding:0; }
   .content .date,.contentinner>p{ padding-left:0; }
   .contentinner pre{ margin-left:0; }
-  .paragraph{ padding:35px 0 0 0; }
+  .list .paragraph{ padding:35px 0 0 0; }
+  .list .paragraph{ padding-top:10px; }
   
 }
 
