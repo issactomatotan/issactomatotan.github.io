@@ -30,16 +30,11 @@ html,body{ position:relative;width:100%;height:100%;margin:0;padding:0;overflow-
 .list>ul>li{ position:relative;margin-bottom:60px; }
 .list>ul>li>a>div{ position:relative; }
 
-.title{ margin:0 0 14px 0;text-decoration:none;color:#808284;font-size:28px;font-weight:bold; }
-.date,.contentinner>p,.paragraph{ width:auto;color:#a7a9ab;font-size:16px; }
-.list .date{ position:absolute;left:0;top:0;line-height:24px; }
-.content .date{ padding-left:60px; }
-.contentinner>p,.paragraph{ line-height:24px; }
-.list .paragraph{ padding-left:120px; }
-.contentinner>p{ padding-left:60px; }
+.title{ margin:0 0 2px 0;text-decoration:none;color:#808284;font-size:28px;font-weight:bold; }
+.date,.paragraph,.content>div>div>p{ width:auto;color:#a7a9ab;font-size:16px;line-height:24px; }
 
-.contentinner b{ padding:2px 6px;border-radius:4px;color:#fff;background:#f15e4a; }
-.contentinner pre{ width:auto;margin:0;padding:10px 15px;margin-left:60px;border:1px solid #939597;border-radius:5px;color:#6d6e70;background:#e6e7e8; }
+.content b{ padding:2px 6px;border-radius:4px;color:#fff;background:#f15e4a; }
+.content pre{ width:auto;margin:0;padding:10px 15px;border:1px solid #939597;border-radius:5px;color:#6d6e70;background:#e6e7e8; }
 
 
 
@@ -49,6 +44,7 @@ html,body{ position:relative;width:100%;height:100%;margin:0;padding:0;overflow-
   .topbar{ width:680px;padding:60px 0;margin:0 auto; }
   .topbar>div{ padding:0; }
   .list,.content{ padding:0 0 60px 0;margin:0 auto; }
+  .list>ul,.content>div{ position:relative;padding:0 60px;margin:0; }
   
 }
 
@@ -62,11 +58,8 @@ html,body{ position:relative;width:100%;height:100%;margin:0;padding:0;overflow-
   .description>a{ position:absolute;top:-50px; }
   .description>a>span{ margin-left:0; }
   .list,.content{ width:auto;max-width:434px; }
-  .list>ul,.content>div{ padding:0; }
-  .content .date,.contentinner>p{ padding-left:0; }
-  .contentinner pre{ margin-left:0; }
-  .list .paragraph{ padding:35px 0 0 0; }
-  .content .paragraph{ padding-top:10px; }
+  .list>ul,.content>div{ padding:0; } 
+  .list>ul>li{ margin-bottom:30px;padding-bottom:10px;border-bottom:1px solid #c6c6c6; }
   
 }
 
@@ -75,14 +68,17 @@ html,body{ position:relative;width:100%;height:100%;margin:0;padding:0;overflow-
   .topbar{ padding:60px 30px; }
   .topbar>div{ width:auto; }
   .name{ width:100%;margin-bottom:5px;background-size:100%; }
-  .nav{ bottom:-60px;right:auto;left:-20px; }
+  .nav{ bottom:-70px;right:auto;left:-20px; }
   .list,.content{ padding:30px 30px 60px; }
-  .title{ margin-bottom:5px; }
-  .paragraph{ margin-top:5px; }
   
 }
 
-
+@media screen and (max-width: 400px){
+  
+  .topbar{ padding:60px 10px; }
+  .list,.content{ padding:30px 10px 60px; }
+  
+}
 
 
 
