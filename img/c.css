@@ -14,8 +14,8 @@ html,body{ position:relative;width:100%;margin:0;padding:0;overflow-x:hidden; }
 .description>a{ float:right; }
 
 .language{ float:right;margin-top:19px; }
-.language>a{ display:inline-block;width:40px;height:20px;color:#58585b;font-size:14px;text-align:center;line-height:20px;text-decoration:none; }
-.language>.select{ color:#fff;background:#f15e4a; }
+.language>a{ display:inline-block;width:40px;height:20px;color:#58585b;font-size:14px;text-align:center;line-height:20px;text-decoration:none;transition:all 0.3s; }
+.language>.select,.language>a:hover{ color:#fff;background:#f15e4a; }
 
 .nav{ position:absolute;bottom:-40px;right:0; }
 .nav>a,.nav>span{ display:inline-block;margin-left:20px;color:#58585b;font-size:16px;text-decoration:none; }
