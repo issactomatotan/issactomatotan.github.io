@@ -34,7 +34,7 @@ html,body{ position:relative;width:100%;margin:0;padding:0;overflow-x:hidden; }
 .date,.paragraph,.content>div>div>p{ width:auto;color:#a7a9ab;font-size:16px;line-height:24px; }
 
 .content b{ padding:2px 6px;border-radius:4px;color:#fff;background:#f15e4a; }
-.content pre{ width:auto;margin:0;padding:10px 15px;border:1px solid #939597;border-radius:5px;color:#6d6e70;background:#e6e7e8; }
+.content pre{ width:auto;margin:0;padding:10px 15px;border:1px solid #939597;border-radius:5px;color:#6d6e70;background:#e6e7e8;overflow-x:auto; }
 
 
 
