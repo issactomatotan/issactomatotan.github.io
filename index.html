@@ -10,7 +10,7 @@ layout: default
       <a href="{{ post.url }}">
       <h3 class="title">{{ post.title }}</h3>
       <div>
-        <span class="date">{{ post.date }}</span>
+        <span class="date">{{ post.date | date_to_string }}</span>
         <p class="paragraph">{{ post.excerpt | remove: '<p>' | remove: '</p>' }}</p>
       </div>
       </a>
