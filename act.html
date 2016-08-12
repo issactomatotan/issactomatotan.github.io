@@ -1,1 +1,85 @@
-asdadas
+<style>
+  html,body{ width:100%;height:100%;margin:0;padding:0;border:0; }
+</style>
+
+<canvas></canvas>
+
+<script>
+window.requestAnimationFrame= (function(){
+  return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame ||
+  function(callback){
+    window.setTimeout(callback, 1000 / 60);
+  };
+})();
+
+(function(){
+  var c= document.getElementsByTagName('canvas')[0],
+      can= c.getContext('2d'),
+      ppl= [],
+      count= 80;
+  
+  function resize(){
+    c.width= window.innerWidth,
+    c.height= window.innerHeight,
+    can.fillStyle='#000000',
+    can.fillRect(0,0,c.width,c.height)
+  }
+  
+  function pplD(){
+    this.x= Math.floor(Math.random()*c.width),
+    this.y= Math.floor(Math.random()*c.height),
+    this.vx= (Math.random()-0.5)*4,
+    this.vy= (Math.random()-0.5)*4,
+    this.size= Math.floor(Math.random()*4)*4
+  }
+  
+  function canF(){
+    for(var i=0;i<count;i++){
+      ppl.push(new pplD)
+    }
+    
+    requestAnimationFrame(render)
+  }
+  
+  function drawppl(d,p){
+    
+    var s= d.size;
+    
+    d.x+= d.vx,
+    d.y+= d.vy
+    
+    for(var i=0;i<ppl.length;i++){
+      if(i==p) continue;
+      if((d.x+s>ppl[i].x+ppl[i].size && d.x-s<ppl[i].x+ppl[i].size) || (d.x+s>ppl[i].x-ppl[i].size && d.x-s<ppl[i].x-ppl[i].size)){
+        if((d.y+s>ppl[i].y+ppl[i].size && d.y-s<ppl[i].y+ppl[i].size) || (d.y+s>ppl[i].y-ppl[i].size && d.y-s<ppl[i].y-ppl[i].size)){
+          if((d.vx>0 && ppl[i].vx<0) || (d.vx<0 && ppl[i].vx>0)) d.vx=d.vx*-1
+          if((d.vy>0 && ppl[i].vy<0) || (d.vy<0 && ppl[i].vy>0)) d.vy=d.vy*-1
+        }
+      }
+    }
+    
+    if(d.x+s>c.width || d.x-s<0) d.vx=d.vx*-1
+    if(d.y+s>c.height || d.y-s<0) d.vy=d.vy*-1
+    
+    can.fillStyle= '#a6e22e';
+    can.beginPath();
+    can.arc(d.x, d.y, d.size, 0, Math.PI*2, true);
+    can.closePath();
+    can.fill()
+  }
+  
+  function render(){
+    can.fillStyle='rgba(0,0,0,0.2)',
+    can.fillRect(0,0,c.width,c.height)
+    
+    for(var i=0;i<count;i++){
+      drawppl(ppl[i],i)
+    }
+    requestAnimationFrame(render)
+  }
+  
+  window.onresize= resize;
+  resize();
+  canF()
+})();
+</script>
