@@ -16,7 +16,7 @@ window.requestAnimationFrame= (function(){
   var c= document.getElementsByTagName('canvas')[0],
       can= c.getContext('2d'),
       ppl= [],
-      count= 80;
+      count= 120;
   
   function resize(){
     c.width= window.innerWidth,
@@ -26,40 +26,63 @@ window.requestAnimationFrame= (function(){
   }
   
   function pplD(){
-    this.x= Math.floor(Math.random()*c.width),
-    this.y= Math.floor(Math.random()*c.height),
-    this.vx= (Math.random()-0.5)*4,
-    this.vy= (Math.random()-0.5)*4,
-    this.size= Math.floor(Math.random()*4)*4
+    var tf,pplnew={
+      x: Math.floor(Math.random()*c.width),
+      y: Math.floor(Math.random()*c.height),
+      size: Math.random()*6+5,
+      vx: (Math.random()-0.5)*4,
+      vy: (Math.random()-0.5)*4
+    }
+        
+    for(var i=0;i<ppl.length;i++){
+      tf= coli(pplnew,ppl[i]);
+      if(tf){
+        pplD();
+        return 
+      } 
+    }
+    
+    ppl.push(pplnew);
+  }
+  
+  function addppl(){
+    pplD();
+    if(ppl.length<=count) setTimeout(addppl,100)
   }
   
   function canF(){
-    for(var i=0;i<count;i++){
-      ppl.push(new pplD)
-    }
-    
+    addppl();
     requestAnimationFrame(render)
+  }
+  
+  function coli(a,b){
+    if((a.x+a.size>b.x+b.size && a.x-a.size<b.x+b.size) || (a.x+a.size>b.x-b.size && a.x-a.size<b.x-b.size)){
+      if((a.y+a.size>b.y+b.size && a.y-a.size<b.y+b.size) || (a.y+a.size>b.y-b.size && a.y-a.size<b.y-b.size)){
+        return true;
+      }
+    }
+    return false;
   }
   
   function drawppl(d,p){
     
-    var s= d.size;
-    
-    d.x+= d.vx,
-    d.y+= d.vy
+    var tf;
     
     for(var i=0;i<ppl.length;i++){
       if(i==p) continue;
-      if((d.x+s>ppl[i].x+ppl[i].size && d.x-s<ppl[i].x+ppl[i].size) || (d.x+s>ppl[i].x-ppl[i].size && d.x-s<ppl[i].x-ppl[i].size)){
-        if((d.y+s>ppl[i].y+ppl[i].size && d.y-s<ppl[i].y+ppl[i].size) || (d.y+s>ppl[i].y-ppl[i].size && d.y-s<ppl[i].y-ppl[i].size)){
-          if((d.vx>0 && ppl[i].vx<0) || (d.vx<0 && ppl[i].vx>0)) d.vx=d.vx*-1
-          if((d.vy>0 && ppl[i].vy<0) || (d.vy<0 && ppl[i].vy>0)) d.vy=d.vy*-1
-        }
-      }
+      tf= coli(d,ppl[i]);
+      if(tf){
+        d.vx=d.vx*-1;
+        d.vy=d.vy*-1;
+        break;
+      } 
     }
     
-    if(d.x+s>c.width || d.x-s<0) d.vx=d.vx*-1
-    if(d.y+s>c.height || d.y-s<0) d.vy=d.vy*-1
+    if(d.x+d.size>c.width || d.x-d.size<0) d.vx=d.vx*-1;
+    if(d.y+d.size>c.height || d.y-d.size<0) d.vy=d.vy*-1;
+    
+    d.x+= d.vx,
+    d.y+= d.vy;
     
     can.fillStyle= '#a6e22e';
     can.beginPath();
@@ -72,7 +95,7 @@ window.requestAnimationFrame= (function(){
     can.fillStyle='rgba(0,0,0,0.2)',
     can.fillRect(0,0,c.width,c.height)
     
-    for(var i=0;i<count;i++){
+    for(var i=0;i<ppl.length;i++){
       drawppl(ppl[i],i)
     }
     requestAnimationFrame(render)
