@@ -16,7 +16,7 @@ window.requestAnimationFrame= (function(){
   var c= document.getElementsByTagName('canvas')[0],
       can= c.getContext('2d'),
       ppl= [],
-      count= 120;
+      count= 20;
   
   function resize(){
     c.width= window.innerWidth,
@@ -56,10 +56,12 @@ window.requestAnimationFrame= (function(){
   }
   
   function coli(a,b){
-    if((a.x+a.size>b.x+b.size && a.x-a.size<b.x+b.size) || (a.x+a.size>b.x-b.size && a.x-a.size<b.x-b.size)){
-      if((a.y+a.size>b.y+b.size && a.y-a.size<b.y+b.size) || (a.y+a.size>b.y-b.size && a.y-a.size<b.y-b.size)){
-        return true;
-      }
+    var dis= (a.size > b.size ? a.size : b.size)+2,
+        disx= Math.abs(a.x-b.x),
+        disy= Math.abs(a.y-b.y);
+    
+    if(disx<dis && disy<dis){
+      return true;
     }
     return false;
   }
