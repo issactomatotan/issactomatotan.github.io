@@ -14,85 +14,109 @@ window.requestAnimationFrame= (function(){
 
 (function(){
   var c= document.getElementsByTagName('canvas')[0],
-      can= c.getContext('2d'),
-      ppl= [],
-      count= 20;
+      can = c.getContext('2d'),
+      ppl = [],
+      count = 12;
   
   function resize(){
-    c.width= window.innerWidth,
-    c.height= window.innerHeight,
+    c.width  = window.innerWidth;
+    c.height = window.innerHeight;
     can.fillStyle='#000000',
     can.fillRect(0,0,c.width,c.height)
   }
   
-  function pplD(){
-    var tf,pplnew={
-      x: Math.floor(Math.random()*c.width),
-      y: Math.floor(Math.random()*c.height),
-      size: Math.random()*6+5,
-      vx: (Math.random()-0.5)*4,
-      vy: (Math.random()-0.5)*4
-    }
-        
-    for(var i=0;i<ppl.length;i++){
-      tf= coli(pplnew,ppl[i]);
-      if(tf){
-        pplD();
-        return 
-      } 
-    }
-    
-    ppl.push(pplnew);
-  }
-  
-  function addppl(){
-    pplD();
-    if(ppl.length<=count) setTimeout(addppl,100)
-  }
-  
   function canF(){
-    addppl();
+    for(var i=0;i<count;i++){
+      ppl.push(new pplD)
+    }
     requestAnimationFrame(render)
   }
   
-  function coli(a,b){
-    var dis= (a.size > b.size ? a.size : b.size)+2,
-        disx= Math.abs(a.x-b.x),
-        disy= Math.abs(a.y-b.y);
-    
-    if(disx<dis && disy<dis){
-      return true;
+  function pplD(){
+    var r = 20;
+    var tf,pplnew={
+      x: Math.floor(Math.random()*c.width-2*r)+3*r,
+      y: Math.floor(Math.random()*c.height-2*r)+3*r,
+      r: r,//Math.random()*4+8,
+      m: 1, // mass
+      vx: (Math.random()-0.5)*4+2,
+      vy: (Math.random()-0.5)*4+2
     }
-    return false;
+        
+    for(var i=0;i<ppl.length;i++){
+      resA(pplnew,ppl[i]);
+    }
+    return pplnew;
   }
   
-  function drawppl(d,p){
-    
-    var tf;
-    
+  function resA(a, b) {
+    var mid = midpoint(a, b);
+    var dist = distance(a, b);
+    if (dist > a.r+b.r) return;
+    a.x = mid.x + (a.r+b.r) * (a.x - b.x) / dist;
+    a.y = mid.y + (a.r+b.r) * (a.y - b.y) / dist;
+  }
+  
+  
+  
+  function midpoint(a, b) {
+    return {
+      x: (a.x + b.x) / 2,
+      y: (a.y + b.y) / 2
+    };
+  }
+  function distance(a, b) {
+    return Math.sqrt(Math.pow(b.x - a.x, 2) +  Math.pow(b.y - a.y, 2));
+  }
+
+  function coli(a, b) {
+    var a1 = {
+      x: a.x + a.vx,
+      y: a.y + a.vy
+    };
+    var b1 = {
+      x: b.x + b.vx,
+      y: b.y + b.vy
+    };
+    var d = distance(a1, b1);
+    if (d > a.r+b.r) return;
+    var n = {
+      x: (b1.x - a1.x) / d,
+      y: (b1.y - a1.y) / d
+    };
+
+    var p = 2 * (a.vx*n.x + a.vy*n.y - (b.vx*n.x + b.vy*n.y)) / (a.m + b.m);
+
+    a.vx = a.vx - p * a.m * n.x;
+    a.vy = a.vy - p * a.m * n.y;
+    b.vx = b.vx + p * b.m * n.x;
+    b.vy = b.vy + p * b.m * n.y;
+  }
+  function drawppl(d, p){
+
     for(var i=0;i<ppl.length;i++){
       if(i==p) continue;
-      tf= coli(d,ppl[i]);
-      if(tf){
-        d.vx=d.vx*-1;
-        d.vy=d.vy*-1;
-        break;
-      } 
+      coli(d,ppl[i]);
     }
+
+    if(d.x+d.r>c.width)
+       d.vx=-Math.abs(d.vx);
+    if(d.x-d.r<0)
+       d.vx=Math.abs(d.vx);
+    if(d.y+d.r>c.height)
+       d.vy=-Math.abs(d.vy);
+    if(d.y-d.r<0)
+       d.vy=Math.abs(d.vy);
     
-    if(d.x+d.size>c.width || d.x-d.size<0) d.vx=d.vx*-1;
-    if(d.y+d.size>c.height || d.y-d.size<0) d.vy=d.vy*-1;
+    d.x += d.vx,
+    d.y += d.vy;
     
-    d.x+= d.vx,
-    d.y+= d.vy;
-    
-    can.fillStyle= '#a6e22e';
+    can.fillStyle= '#ff6666';
     can.beginPath();
-    can.arc(d.x, d.y, d.size, 0, Math.PI*2, true);
+    can.arc(d.x, d.y, d.r, 0, Math.PI*2, true);
     can.closePath();
-    can.fill()
+    can.fill();
   }
-  
   function render(){
     can.fillStyle='rgba(0,0,0,0.2)',
     can.fillRect(0,0,c.width,c.height)
@@ -105,6 +129,6 @@ window.requestAnimationFrame= (function(){
   
   window.onresize= resize;
   resize();
-  canF()
+  canF();
 })();
 </script>
