@@ -1,9 +1,7 @@
 <style>
   html,body{ width:100%;height:100%;margin:0;padding:0;border:0; }
-  .asd{ width:160px;height:160px;position:absolute;left:50%;top:50%;margin:-80px;background:rgba(155,155,155,0.2); }
 </style>
 
-<div class="asd"></div>
 <canvas></canvas>
 
 <script>
@@ -20,7 +18,7 @@ window.requestAnimationFrame= (function(){
       ppl = [], startTime= new Date().getSeconds(),
       color = 0, colorChart= [[255,241,0],[237,28,36],[0,173,239],[0,165,80],[126,63,152]],
       nowColor= colorChart[0],
-      count = 6, lastdet= 0;
+      count = 12, lastdet= 0;
   
   function resize(){
     c.width  = window.innerWidth;
@@ -43,8 +41,8 @@ window.requestAnimationFrame= (function(){
       y: Math.floor(Math.random()*c.height-2*r)+3*r,
       r: r,
       m: 1,
-      vx: (Math.random()-0.5)*4*5,
-      vy: (Math.random()-0.5)*4*5
+      vx: (Math.random()-0.5)*4,
+      vy: (Math.random()-0.5)*4
     }
         
     for(var i=0;i<ppl.length;i++){
