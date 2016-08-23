@@ -2,15 +2,15 @@
 <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="188.637px" height="188.638px" viewBox="0 0 188.637 188.638" enable-background="new 0 0 188.637 188.638"
+	 width="188.637px" height="188.639px" viewBox="0 0 188.637 188.639" enable-background="new 0 0 188.637 188.639"
 	 xml:space="preserve">
 <g>
 	<g>
-		<path fill="#FFFFFF" d="M14.318,14.319v160h160v-160H14.318z M105.748,128.605v22.857H82.89v-22.857H60.033v22.857H37.176v-22.857
-			v-22.858V37.177h22.857v68.571H82.89h22.858V128.605z M151.462,60.033v22.858v68.571h-22.858V82.891h-22.856H82.89V60.033V37.177
-			h22.858v22.856h22.856V37.177h22.858V60.033z"/>
+		<path fill="#FFFFFF" d="M14.318,14.319v160h160v-160H14.318z M105.748,128.605v22.856H82.89v-22.856H60.033v22.856H37.176v-22.856
+			v-22.858v-68.57h22.857v68.571H82.89h22.858V128.605z M151.462,60.033v22.858v68.57h-22.858v-68.57h-22.855H82.89V60.033V37.177
+			h22.858v22.856h22.855V37.177h22.858V60.033z"/>
 	</g>
-	<rect x="106.362" y="59.42" fill="#F15E4A" width="22.857" height="22.856"/>
-	<rect x="60.033" y="105.748" fill="#F15E4A" width="22.857" height="22.858"/>
+	<rect x="105.748" y="60.033" fill="#F15E4A" width="22.857" height="22.856"/>
+	<rect x="60.033" y="105.748" fill="#F15E4A" width="22.856" height="22.858"/>
 </g>
 </svg>
