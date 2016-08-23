@@ -107,15 +107,25 @@ window.requestAnimationFrame= (function(){
        d.vy=-Math.abs(d.vy);
     if(d.y-d.r<0)
        d.vy=Math.abs(d.vy);
-       
-    if(d.x < c.width/2-80 && d.x+d.r+d.vx > c.width/2-80 && d.y+d.r+d.vy > c.height/2-80 && d.y-d.r+d.vy < c.height/2 +80){
+    
+    var logoW= 140/2,
+        w2l= c.width/2-logoW,
+        xrx= d.x+d.r+d.vx,
+        yry= d.y+d.r+d.vy,
+        h2l= c.height/2-logoW,
+        yry2= d.y-d.r+d.vy,
+        h2l2= c.height/2+logoW,
+        xrx2= d.x-d.r+d.vx,
+        w2l2= c.width/2+logoW;
+    
+    if(d.x < w2l && xrx > w2l && yry > h2l && yry2 < h2l2){
       d.vx=-Math.abs(d.vx);
-    }else if(d.x > c.width/2+80+d.r && d.x-d.r+d.vx < c.width/2+80 && d.y+d.r+d.vy > c.height/2-80 && d.y-d.r+d.vy < c.height/2 +80){
+    }else if(d.x > w2l2+d.r && xrx2 < w2l2 && yry > h2l && yry2 < h2l2){
       d.vx=Math.abs(d.vx);
     }
-    if(d.y < c.height/2-80 && d.y+d.r+d.vy > c.height/2-80 && d.x+d.r+d.vx > c.width/2-80 && d.x-d.r+d.vx < c.width/2 +80){
+    if(d.y < h2l && yry > h2l && xrx > w2l && xrx2 < w2l2){
       d.vy=-Math.abs(d.vy);
-    }else if(d.y > c.height/2+80+d.r && d.y-d.r+d.vy < c.height/2+80 && d.x+d.r+d.vx > c.width/2-80 && d.x-d.r+d.vx < c.width/2 +80 ){
+    }else if(d.y > h2l2+d.r && yry2 < h2l2 && xrx > w2l && xrx2 < w2l2 ){
       d.vy=Math.abs(d.vy);
     }
     
