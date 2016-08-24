@@ -1,5 +1,5 @@
 <style>
-  html,body{ width:100%;height:100%;margin:0;padding:0;border:0; }
+  html,body{ width:100%;height:100%;margin:0;padding:0;border:0;background:rgb(0,0,0); }
 </style>
 
 <canvas></canvas>
@@ -46,9 +46,9 @@ window.requestAnimationFrame= (function(){
       x: c.width/2+r,
       y: c.height/2+r,
       r: r,
-      m: 1,
-      vx: (Math.random()-0.5)*2,
-      vy: (Math.random()-0.5)*2
+      m: Math.floor(Math.random()*4+1),
+      vx: (Math.random()-0.5)*1.2,
+      vy: (Math.random()-0.5)*1.2
     }
     return pplnew;
   }
