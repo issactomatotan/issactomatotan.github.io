@@ -19,6 +19,8 @@ window.requestAnimationFrame= (function(){
       color = 0, colorChart= [[255,241,0],[237,28,36],[0,173,239],[0,165,80],[126,63,152]],
       nowColor= colorChart[0],
       count = Math.floor((window.innerWidth/100)*(window.innerHeight/100)), lastdet= 0;
+  
+  c.style.webkitFilter= c.style.filter = "blur(3px)";
 
   function resize(){
     c.width  = window.innerWidth;
