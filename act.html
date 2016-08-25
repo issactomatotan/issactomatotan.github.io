@@ -32,7 +32,7 @@ window.requestAnimationFrame= (function(){
     function pushPpl(){
       ppl.push(new pplD);
       if(ppl.length<count){
-        setTimeout(pushPpl,1500)
+        setTimeout(pushPpl,2000)
       }
     }
     pushPpl()
@@ -72,7 +72,7 @@ window.requestAnimationFrame= (function(){
       y: b.y + b.vy
     };
     var d = distance(a1, b1);
-    if (d > a.r+b.r) return;
+    if (d > a.r+b.r+5) return;
     var n = {
       x: (b1.x - a1.x) / d,
       y: (b1.y - a1.y) / d
