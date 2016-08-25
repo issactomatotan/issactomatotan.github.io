@@ -46,7 +46,7 @@ window.requestAnimationFrame= (function(){
       y: c.height/2+r,
       r: r,
       o: 0.3,
-      t: count*200,
+      t: count*100,
       m: Math.floor(Math.random()*4+1),
       vx: (Math.random()-0.5)*1.2,
       vy: (Math.random()-0.5)*1.2
@@ -129,7 +129,7 @@ window.requestAnimationFrame= (function(){
       d.o= d.o-0.002;
       if(d.t<0){
         d.o= 0.3,
-        d.t= 10000,
+        d.t= count*100,
         d.x= c.width/2+d.r,
         d.y= c.height/2+d.r;
       }
