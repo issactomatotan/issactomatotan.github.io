@@ -18,7 +18,7 @@ window.requestAnimationFrame= (function(){
       ppl = [], startTime= new Date().getSeconds(),
       color = 0, colorChart= [[255,241,0],[237,28,36],[0,173,239],[0,165,80],[126,63,152]],
       nowColor= colorChart[0],
-      count = Math.floor((window.innerWidth/100)*(window.innerHeight/100)), lastdet= 0;
+      count = Math.floor((window.innerWidth/80)*(window.innerHeight/80)), lastdet= 0;
   
 
   function resize(){
@@ -101,7 +101,7 @@ window.requestAnimationFrame= (function(){
     if(d.y-d.r<0)
        d.vy=Math.abs(d.vy);
     
-    var logoW= 140/2,
+    var logoW= 134/2,
         w2l= c.width/2-logoW,
         xrx= d.x+d.r+d.vx,
         yry= d.y+d.r+d.vy,
