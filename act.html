@@ -157,7 +157,7 @@ window.requestAnimationFrame= (function(){
     yb.addColorStop(0,'#CCDFF3');   
     yb.addColorStop(1,'#FFF0C4');
     can.fillStyle = yb;
-    can.fill();
+    can.fillRect(0,0,c.width,c.height);
     
     for(var i=0;i<ppl.length;i++){
       drawppl(ppl[i],i)
