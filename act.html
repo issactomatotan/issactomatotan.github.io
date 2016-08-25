@@ -16,7 +16,7 @@ window.requestAnimationFrame= (function(){
   var c= document.getElementsByTagName('canvas')[0],
       can = c.getContext('2d'),
       ppl = [], startTime= new Date().getSeconds(),
-      color = 0, colorChart= [[255,241,0],[237,28,36],[0,173,239],[0,165,80],[126,63,152]],
+      color = 0, colorChart= [[237,28,36],[0,173,239],[0,165,80],[126,63,152]],
       nowColor= colorChart[0],
       count = Math.floor((window.innerWidth/80)*(window.innerHeight/80)), lastdet= 0;
   
@@ -45,6 +45,8 @@ window.requestAnimationFrame= (function(){
       x: c.width/2+r,
       y: c.height/2+r,
       r: r,
+      o: 0.3,
+      t: 10000,
       m: Math.floor(Math.random()*4+1),
       vx: (Math.random()-0.5)*1.2,
       vy: (Math.random()-0.5)*1.2
@@ -122,6 +124,16 @@ window.requestAnimationFrame= (function(){
       d.vy=Math.abs(d.vy);
     }
     
+    d.t--;
+    if(d.t<1000){
+      d.o= d.o-0.002;
+      if(d.t<0){
+        d.o= 0.3,
+        d.t= 10000,
+        d.x= c.width/2+d.r,
+        d.y= c.height/2+d.r;
+      }
+    }
     d.x += d.vx,
     d.y += d.vy;
     
@@ -129,7 +141,7 @@ window.requestAnimationFrame= (function(){
       countColor(i);
     }
     
-    can.fillStyle= 'rgba('+Math.floor(nowColor[0])+','+Math.floor(nowColor[1])+','+Math.floor(nowColor[2])+',0.3)';
+    can.fillStyle= 'rgba('+Math.floor(nowColor[0])+','+Math.floor(nowColor[1])+','+Math.floor(nowColor[2])+','+d.o+'')';
     can.beginPath();
     can.arc(d.x, d.y, d.r, 0, Math.PI*2, true);
     can.closePath();
