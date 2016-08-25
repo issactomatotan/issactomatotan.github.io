@@ -72,7 +72,7 @@ window.requestAnimationFrame= (function(){
       y: b.y + b.vy
     };
     var d = distance(a1, b1);
-    if (d > a.r+b.r-5) return;
+    if (d > a.r+b.r-a.r/2) return;
     var n = {
       x: (b1.x - a1.x) / d,
       y: (b1.y - a1.y) / d
@@ -129,7 +129,7 @@ window.requestAnimationFrame= (function(){
       countColor(i);
     }
     
-    can.fillStyle= 'rgba('+Math.floor(nowColor[0])+','+Math.floor(nowColor[1])+','+Math.floor(nowColor[2])+',0.2)';
+    can.fillStyle= 'rgba('+Math.floor(nowColor[0])+','+Math.floor(nowColor[1])+','+Math.floor(nowColor[2])+',0.3)';
     can.beginPath();
     can.arc(d.x, d.y, d.r, 0, Math.PI*2, true);
     can.closePath();
