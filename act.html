@@ -42,8 +42,8 @@ window.requestAnimationFrame= (function(){
   function pplD(){
     var r = Math.random()*10+10;
     var tf,pplnew={
-      x: c.width/2+r,
-      y: c.height/2+r,
+      x: c.width,
+      y: c.height,
       r: r,
       o: 0.3,
       t: count*100,
@@ -130,8 +130,8 @@ window.requestAnimationFrame= (function(){
       if(d.t<0){
         d.o= 0.3,
         d.t= count*100,
-        d.x= c.width/2+d.r,
-        d.y= c.height/2+d.r;
+        d.x= c.width/2,
+        d.y= c.height/2;
       }
     }
 
