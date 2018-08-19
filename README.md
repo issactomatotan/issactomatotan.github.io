@@ -13,9 +13,3 @@ from beginner to beginner
 
   The content of this site is licensed under the MIT License. ( Copyright 2016 Issac Tomatotan )
 
-
-  Contacts
-  --------
-
-  tomato082014@gmail.com
-  2605988391@qq.com
