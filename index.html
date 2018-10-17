@@ -1,21 +1,37 @@
----
-layout: default
----
+<!doctype html>
+<html>
 
-{% include header.html %}
+<head>
+    <meta charset="utf-8">
+    <title>redirecting ...</title>
 
-  <div class="list"><ul>
-    {% for post in site.posts %}
-    <li>
-      <a href="{{ post.url }}">
-      <h3 class="title">{{ post.title }}</h3>
-      <div>
-        <span class="date">{{ post.date | date_to_string }}</span>
-        <p class="paragraph">{{ post.excerpt | remove: '<p>' | remove: '</p>' }}</p>
-      </div>
-      </a>
-    </li>
-    {% endfor %}
-  </ul></div>
+    <style>
+        body {
+            font-size: 20px;
+            font-family: -apple-system, "Open Sans", HelveticaNeue-Light, "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+    </style>
+</head>
 
-{% include footer.html %}
+<body>
+    redirect to <span id="dot">.</span>
+    <script>
+        (function () {
+
+            let d = '...',
+                c = 0,
+                s = document.getElementById('dot');
+
+            setInterval(function () {
+                c = c + 1 > 3 ? 0 : c + 1;
+                s.innerHTML = d.slice(0, c);
+            }, 250)
+
+            setTimeout(function () {
+                window.location.href = 'https://yf-startup.com/'
+            }, 2500)
+        })()
+    </script>
+</body>
+
+</html>
